@@ -5,6 +5,11 @@ import Navbar from '~/components/Navbar'
  const upload = () => {
    const [isProcessing, setIsProcessing] = useState(false)
    const [statusText, setStatusText] = useState('')
+   const [file, setFile] = useState<File | null>(null)
+
+   const handleFileSelect = (file: File | null) =>{
+    setFile(file)
+   }
 
    const handledSubmit =(e : FormEvent<HTMLFormElement>)=>{
 
@@ -39,7 +44,7 @@ import Navbar from '~/components/Navbar'
                     </div>
                     <div className='form-div'>
                         <label htmlFor='uploader'>Upload Resume</label>
-                       <FileUploader/>
+                       <FileUploader onFileSelect={handleFileSelect}/>
                     </div>
                    <button className='primary-button' type='submit'>
                     Analyze Resume
