@@ -20,7 +20,9 @@ const FileUploader = ({onFileSelect}: FileUploaderProps) => {
     maxSize: 20 * 1024 * 1024,
   })
 
-  const file = acceptedFiles[0] || null;
+  // const file = acceptedFiles[0] || null;
+
+
 
   return (
     <div className='w-full gradient-border'>
